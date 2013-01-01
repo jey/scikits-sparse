@@ -70,7 +70,7 @@ if __name__ == "__main__":
           ext_modules = [
               Extension("scikits.sparse.cholmod",
                         ["scikits/sparse/cholmod.pyx"],
-                        libraries=["cholmod"],
+                        libraries="cholmod amd colamd camd ccolamd suitesparseconfig metis mkl_rt rt".split(),
                         include_dirs=[np.get_include()],
                         # If your CHOLMOD is in a funny place, you may need to
                         # add something like this:
